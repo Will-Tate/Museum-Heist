@@ -1,19 +1,19 @@
 [gd_scene load_steps=11 format=3 uid="uid://dnth0barouoal"]
 
-[ext_resource type="Texture2D" uid="uid://c87fw1gcgk3m6" path="res://char_standing1.png" id="1_dg3pb"]
 [ext_resource type="Script" path="res://scenes/mainCharacter.gd" id="1_genmn"]
-[ext_resource type="Texture2D" uid="uid://fce7iulitq6f" path="res://Ch_Grappling.png" id="2_nhjmy"]
-[ext_resource type="Texture2D" uid="uid://4526a8po1vnr" path="res://Ch_Hiding.png" id="3_6mag1"]
-[ext_resource type="Texture2D" uid="uid://chwykbaiytbxq" path="res://char_right1.png" id="5_oduyj"]
-[ext_resource type="Texture2D" uid="uid://catj6rfvq2ugu" path="res://char_right2.png" id="6_4jjo7"]
-[ext_resource type="Texture2D" uid="uid://b73a533f87l87" path="res://char_right3.png" id="7_82qgg"]
-[ext_resource type="Texture2D" uid="uid://cydvjx15xo3fb" path="res://char_right4.png" id="8_u1akf"]
+[ext_resource type="Texture2D" uid="uid://fce7iulitq6f" path="res://assets/Ch_Grappling.png" id="2_ocaoy"]
+[ext_resource type="Texture2D" uid="uid://4526a8po1vnr" path="res://assets/Ch_Hiding.png" id="3_6mag1"]
+[ext_resource type="Texture2D" uid="uid://c87fw1gcgk3m6" path="res://assets/char_standing1.png" id="4_jcunu"]
+[ext_resource type="Texture2D" uid="uid://chwykbaiytbxq" path="res://assets/char_right1.png" id="5_mkhbt"]
+[ext_resource type="Texture2D" uid="uid://catj6rfvq2ugu" path="res://assets/char_right2.png" id="6_i5a3i"]
+[ext_resource type="Texture2D" uid="uid://b73a533f87l87" path="res://assets/char_right3.png" id="7_avyn3"]
+[ext_resource type="Texture2D" uid="uid://cydvjx15xo3fb" path="res://assets/char_right4.png" id="8_ghmfr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfes2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nhjmy")
+"texture": ExtResource("2_ocaoy")
 }],
 "loop": true,
 "name": &"Grapple",
@@ -29,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dg3pb")
+"texture": ExtResource("4_jcunu")
 }],
 "loop": true,
 "name": &"default",
@@ -37,16 +37,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_oduyj")
+"texture": ExtResource("5_mkhbt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_4jjo7")
+"texture": ExtResource("6_i5a3i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_82qgg")
+"texture": ExtResource("7_avyn3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_u1akf")
+"texture": ExtResource("8_ghmfr")
 }],
 "loop": true,
 "name": &"walk",
@@ -65,7 +65,7 @@ position = Vector2(45, 69)
 scale = Vector2(0.257143, 0.234694)
 sprite_frames = SubResource("SpriteFrames_gfes2")
 autoplay = "default"
-frame_progress = 0.888483
+frame_progress = 0.98214
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(49, 71)
