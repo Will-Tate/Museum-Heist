@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnth0barouoal"]
+[gd_scene load_steps=12 format=3 uid="uid://dnth0barouoal"]
 
 [ext_resource type="Script" path="res://scenes/mainCharacter.gd" id="1_genmn"]
 [ext_resource type="Texture2D" uid="uid://fce7iulitq6f" path="res://assets/Ch_Grappling.png" id="2_ocaoy"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://catj6rfvq2ugu" path="res://assets/char_right2.png" id="6_i5a3i"]
 [ext_resource type="Texture2D" uid="uid://b73a533f87l87" path="res://assets/char_right3.png" id="7_avyn3"]
 [ext_resource type="Texture2D" uid="uid://cydvjx15xo3fb" path="res://assets/char_right4.png" id="8_ghmfr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o7lis"]
+blend_mode = 2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfes2"]
 animations = [{
@@ -61,12 +64,15 @@ script = ExtResource("1_genmn")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 3
+material = SubResource("CanvasItemMaterial_o7lis")
 position = Vector2(45, 69)
 scale = Vector2(0.257143, 0.234694)
 sprite_frames = SubResource("SpriteFrames_gfes2")
+animation = &"Hide"
 autoplay = "default"
-frame_progress = 0.98214
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(49, 71)
 shape = SubResource("RectangleShape2D_vfhm7")
+
+[node name="Camera2D" type="Camera2D" parent="."]

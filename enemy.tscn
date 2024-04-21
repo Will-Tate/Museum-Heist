@@ -40,11 +40,12 @@ script = ExtResource("1_h6jva")
 position = Vector2(-29.5, 16.5)
 scale = Vector2(0.31108, 0.359827)
 sprite_frames = SubResource("SpriteFrames_cactw")
-frame_progress = 0.54815
+frame_progress = 0.819088
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-35, 14)
 shape = SubResource("RectangleShape2D_ape05")
+disabled = true
 
 [node name="Detection" type="Area2D" parent="."]
 
