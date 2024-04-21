@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwbcvvqtcgynv"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_h6jva"]
+[ext_resource type="Texture2D" uid="uid://dgt4jtbrvs1rk" path="res://assets/gaurd-right-1.png" id="1_x7sfy"]
+[ext_resource type="Texture2D" uid="uid://kwvlomuvxakt" path="res://assets/guard-right-2.png" id="2_g540u"]
+[ext_resource type="Texture2D" uid="uid://h8wkoqgvh7is" path="res://assets/guard-right-3.png" id="3_hnsed"]
+[ext_resource type="Texture2D" uid="uid://cnl2sf6vfxlch" path="res://assets/guard-right-4.png" id="4_giakl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cactw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x7sfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g540u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hnsed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_giakl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ape05"]
+size = Vector2(73, 249)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_djisj"]
+radius = 266.423
+
+[node name="Node2D" type="CharacterBody2D"]
+position = Vector2(39, -10)
+script = ExtResource("1_h6jva")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-29.5, 16.5)
+scale = Vector2(0.31108, 0.359827)
+sprite_frames = SubResource("SpriteFrames_cactw")
+frame_progress = 0.54815
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-35, 14)
+shape = SubResource("RectangleShape2D_ape05")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+position = Vector2(-193, 2)
+shape = SubResource("CircleShape2D_djisj")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]

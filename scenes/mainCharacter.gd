@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var canHide = true;
+var canHide = false;
 var canSee = true;
 var canMove = true;
 @onready var sprite_2d = $Sprite2D
@@ -19,8 +19,10 @@ func _physics_process(delta):
 
 	# Handle jump.
 		
-	if Input.is_action_just_pressed("hide_behind") and is_on_floor() and canHide:
+	if Input.is_action_just_pressed("hide_behind") and canHide:
 		hideBehind();
+	if Input.is_action_just_released("hide_behind") and canSee == false:
+		unHide()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if canMove:
@@ -44,9 +46,20 @@ func hideBehind():
 	velocity.y = 0;
 	sprite_2d.animation = "Hide"
 	canMove = false
-	while !Input.is_action_just_released("hide_behind"):
-		canSee = false;
+	canSee = false;
+	
+	
+func unHide():
 	canSee = true;
 	canMove = true
 	sprite_2d.animation = "default"
 	#when released swap back sprite, reenable movement and detection 
+
+func getCanSee():
+	return canSee
+
+func setCanHide(canI):
+	canHide = canI
+
+func die():
+	sprite_2d.visible=false
