@@ -30,7 +30,7 @@ animations = [{
 size = Vector2(73, 249)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djisj"]
-radius = 266.423
+radius = 180.069
 
 [node name="Node2D" type="CharacterBody2D"]
 position = Vector2(39, -10)
@@ -50,7 +50,7 @@ disabled = true
 [node name="Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
-position = Vector2(-193, 2)
+position = Vector2(-176, 2)
 shape = SubResource("CircleShape2D_djisj")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

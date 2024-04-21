@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://di224d1ehghf"]
+[gd_scene load_steps=14 format=3 uid="uid://di224d1ehghf"]
 
 [ext_resource type="Texture2D" uid="uid://dhmdn40ijuybe" path="res://museum_interior.png" id="2_8rpt6"]
 [ext_resource type="Texture2D" uid="uid://djwpfcmo1i1ma" path="res://Terrain (16x16).png" id="2_lorjr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dfd26e2nef8x0" path="res://scenes/museum_item_5.tscn" id="8_xb110"]
 [ext_resource type="PackedScene" uid="uid://dodxhqq2r5thc" path="res://scenes/museum_item_4.tscn" id="9_1ntkm"]
 [ext_resource type="PackedScene" uid="uid://co083ob4oyyun" path="res://scenes/museum_item_3.tscn" id="10_i4y53"]
+[ext_resource type="Texture2D" uid="uid://f8lavv8avbr3" path="res://Museum bg _ no lanterns.png" id="11_pe7ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40ddj"]
 texture = ExtResource("2_lorjr")
@@ -501,6 +502,7 @@ sources/0 = SubResource("TileSetAtlasSource_40ddj")
 [node name="Node2D" type="Node2D"]
 
 [node name="MuseumInterior" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1583, 281)
 scale = Vector2(0.317941, 0.356518)
 texture = ExtResource("2_8rpt6")
@@ -522,7 +524,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(458768, 1114112, 2, 458769, 1179648, 2, 458770, 1245184, 2, 589836, 1114112, 2, 589837, 1179648, 2, 589838, 1245184, 2)
 
 [node name="CharacterBody2D" parent="Node" instance=ExtResource("3_lnudp")]
-position = Vector2(208, 154)
+position = Vector2(82, 47)
 
 [node name="MuseumItem1" parent="Node" instance=ExtResource("4_h73jh")]
 
@@ -533,7 +535,6 @@ position = Vector2(924, 373)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/Area2D"]
 position = Vector2(3.00012, 2)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(0, 325, 432, 325, 592, 509, 2592, 511, 2760, 328, 3162, 327, 3163, 30, 1, 33, 1, 301, -108, -116, 3256, -65, 3211, 667, 569, 555)
 
 [node name="enemy2" parent="Node" instance=ExtResource("5_40hlg")]
@@ -556,3 +557,9 @@ position = Vector2(2035, 361)
 
 [node name="MuseumItem4" parent="." instance=ExtResource("10_i4y53")]
 position = Vector2(1583, 368)
+
+[node name="MuseumBgNoLanterns" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(1585, 276)
+scale = Vector2(0.317497, 0.376429)
+texture = ExtResource("11_pe7ng")

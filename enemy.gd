@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $Detection/CollisionShape2D
 
-var speed = 200
+var speed = 100
 var player
 var player_in_area = false
 var direction = -1
