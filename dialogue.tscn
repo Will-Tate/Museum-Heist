@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://j3wcm6tulvtr"]
+[gd_scene load_steps=7 format=3 uid="uid://j3wcm6tulvtr"]
 
 [ext_resource type="Texture2D" uid="uid://dluoebhi1f5gr" path="res://dialogue-box.png" id="1_gwvjd"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_ra7t6"]
 [ext_resource type="Texture2D" uid="uid://b4hsjwk5qc5r" path="res://label.png" id="2_1ahr0"]
 [ext_resource type="Texture2D" uid="uid://d2upypqaobrv0" path="res://arrow.png" id="3_5i2ro"]
-[ext_resource type="Texture2D" uid="uid://dxxiji24hlxgd" path="res://ACCEPT.png" id="5_s53q8"]
+[ext_resource type="FontFile" uid="uid://danidhgydo05m" path="res://IBMPlexMono-Medium.ttf" id="3_amo1g"]
+[ext_resource type="FontFile" uid="uid://4aviod1jluif" path="res://joystix monospace.otf" id="4_s138l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,13 +39,14 @@ expand_mode = 2
 
 [node name="Text" type="Label" parent="Dialogue/TextureRect"]
 layout_mode = 2
-offset_left = 54.0
-offset_top = 52.0
-offset_right = 618.0
-offset_bottom = 158.0
+offset_left = 44.0
+offset_top = 51.0
+offset_right = 620.0
+offset_bottom = 125.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_amo1g")
 theme_override_font_sizes/font_size = 21
 autowrap_mode = 2
 
@@ -67,13 +69,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -59.5
+offset_top = -13.0
+offset_right = 59.5
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s138l")
+theme_override_font_sizes/font_size = 18
+text = "OPERATOR"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(30, 30)
@@ -102,28 +107,34 @@ expand_mode = 2
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.368
+anchor_top = 0.69
+anchor_right = 0.561
+anchor_bottom = 0.865
+offset_left = 0.11998
+offset_top = -1.14441e-05
+offset_right = -0.260032
+offset_bottom = -1.38283e-05
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="TextureButton2"]
+[node name="Label" type="Label" parent="TextureButton2"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -63.0
-offset_right = 46.0
-offset_bottom = -31.0
+anchors_preset = -1
+anchor_left = 0.134
+anchor_right = 1.173
+anchor_bottom = 1.0
+offset_left = -0.0180004
+offset_top = 1.0
+offset_right = 0.0289876
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_s53q8")
-expand_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s138l")
+theme_override_font_sizes/font_size = 26
+text = "ACCEPT"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

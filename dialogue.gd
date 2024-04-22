@@ -1,7 +1,7 @@
 extends Control
 
 # Define an array of texts
-var texts = ["Hey Ania, I have another job for you. ", "My sources have informed me that the Kritik Museum is adding another artifact to its collection, to be on display in a few days. ", "The artifact in question is Garuda’s feather. ", "Yes, THE Garuda. You’re familiar with the legend, I’m sure. ","Your mission, should you choose to accept, is to infiltrate the high security Museum, repossess the artifact, replace it with this letter","and return the artifact to the Indian people. ", "May the odds be ever in your favor"]
+var texts = ["Hey Ania, I have another job for you. ", "My sources have informed me that the Aritish Museum is adding another artifact to its collection in a few days. ", "The artifact in question is Garuda’s feather. ", "Yes, THE Garuda. You’re familiar with the legend, I’m sure. ","Your mission, should you choose to accept, is to infiltrate the high security museum ","repossess the artifact", "replace it with the letter" ,"and return the artifact to the Indian people. ", "May the odds be ever in your favor.."]
 var current_text_index = 0
 
 # Reference to the Label node
