@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $Detection/CollisionShape2D
+@onready var light = $Detection/Light
+
 
 var speed = 100
 var player
@@ -17,14 +19,19 @@ func _physics_process(delta):
 	if player_in_area:
 		if player.getCanSee()==true:
 			player.die()
+			player_in_area=false
+			
 	velocity.x = direction * speed
 	
 	move_and_slide()
 	animated_sprite_2d.play("default")
 	if direction == -1 :
 		animated_sprite_2d.flip_h = true
+		light.flip_h = true
+		
 	else:
 		animated_sprite_2d.flip_h = false
+		light.flip_h = false
 
 
 func _on_detection_body_entered(body):
@@ -34,6 +41,7 @@ func _on_detection_body_entered(body):
 	if body.has_method("inverter"):
 		direction = direction *-1
 		collision_shape_2d.position *=-1
+		light.position *=-1
 
 
 func _on_detection_body_exited(body):

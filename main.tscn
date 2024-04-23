@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://di224d1ehghf"]
+[gd_scene load_steps=15 format=3 uid="uid://di224d1ehghf"]
 
 [ext_resource type="Texture2D" uid="uid://dhmdn40ijuybe" path="res://museum_interior.png" id="2_8rpt6"]
 [ext_resource type="Texture2D" uid="uid://djwpfcmo1i1ma" path="res://Terrain (16x16).png" id="2_lorjr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dodxhqq2r5thc" path="res://scenes/museum_item_4.tscn" id="9_1ntkm"]
 [ext_resource type="PackedScene" uid="uid://co083ob4oyyun" path="res://scenes/museum_item_3.tscn" id="10_i4y53"]
 [ext_resource type="Texture2D" uid="uid://f8lavv8avbr3" path="res://Museum bg _ no lanterns.png" id="11_pe7ng"]
+[ext_resource type="PackedScene" uid="uid://j3wcm6tulvtr" path="res://dialogue.tscn" id="12_b53kr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_40ddj"]
 texture = ExtResource("2_lorjr")
@@ -524,12 +525,22 @@ format = 2
 layer_0/tile_data = PackedInt32Array(458768, 1114112, 2, 458769, 1179648, 2, 458770, 1245184, 2, 589836, 1114112, 2, 589837, 1179648, 2, 589838, 1245184, 2)
 
 [node name="CharacterBody2D" parent="Node" instance=ExtResource("3_lnudp")]
-position = Vector2(82, 47)
+position = Vector2(82, 120)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node/CharacterBody2D"]
+remote_path = NodePath(".")
+
+[node name="Camera2D" type="Camera2D" parent="Node/CharacterBody2D"]
+limit_left = 10
+limit_top = 22
+limit_right = 3165
+limit_bottom = 530
+editor_draw_limits = true
 
 [node name="MuseumItem1" parent="Node" instance=ExtResource("4_h73jh")]
 
 [node name="enemy" parent="Node" instance=ExtResource("5_40hlg")]
-position = Vector2(924, 373)
+position = Vector2(926, 385)
 
 [node name="Area2D" type="StaticBody2D" parent="Node"]
 
@@ -547,19 +558,26 @@ position = Vector2(2791, 426)
 position = Vector2(369, 424)
 
 [node name="MuseumItem1" parent="." instance=ExtResource("7_vcx7s")]
-position = Vector2(1156, 367)
+position = Vector2(1157, 377)
 
 [node name="MuseumItem2" parent="." instance=ExtResource("8_xb110")]
-position = Vector2(2474, 361)
+z_index = -4
+position = Vector2(2471, 381)
 
 [node name="MuseumItem3" parent="." instance=ExtResource("9_1ntkm")]
-position = Vector2(2035, 361)
+position = Vector2(2034, 376)
 
 [node name="MuseumItem4" parent="." instance=ExtResource("10_i4y53")]
-position = Vector2(1583, 368)
+position = Vector2(1585, 380)
+
+[node name="Control" parent="." instance=ExtResource("12_b53kr")]
+offset_left = -688.0
+offset_top = 282.0
+offset_right = -28.0
+offset_bottom = 482.0
 
 [node name="MuseumBgNoLanterns" type="Sprite2D" parent="."]
-z_index = -3
+z_index = -5
 position = Vector2(1585, 276)
 scale = Vector2(0.317497, 0.376429)
 texture = ExtResource("11_pe7ng")

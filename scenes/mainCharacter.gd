@@ -10,6 +10,8 @@ var canHide = false;
 var canSee = true;
 var canMove = true;
 @onready var sprite_2d = $Sprite2D
+@onready var main_char_body = $"."
+
 
 
 func _physics_process(delta):
@@ -62,4 +64,6 @@ func setCanHide(canI):
 	canHide = canI
 
 func die():
-	sprite_2d.visible=false
+	main_char_body.global_position.x= 82
+	main_char_body.global_position.y= 120
+	#sprite_2d.visible=false

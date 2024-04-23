@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4rf7b8jvfyx4"]
+
+[ext_resource type="Texture2D" uid="uid://capjjiooeoyay" path="res://museum_exterior.png" id="1_ur1rj"]
+[ext_resource type="PackedScene" uid="uid://dnth0barouoal" path="res://scenes/mainCharacter.tscn" id="2_nh5n2"]
+[ext_resource type="PackedScene" uid="uid://cqk06g20wncde" path="res://inverter.tscn" id="3_hkfk5"]
+[ext_resource type="PackedScene" uid="uid://dwbcvvqtcgynv" path="res://enemy.tscn" id="4_wwrok"]
+[ext_resource type="PackedScene" uid="uid://c48k4wncyjtsm" path="res://scenes/OutsideHide.tscn" id="5_4a2u6"]
+
+[node name="OutsideMuseumMain" type="Node2D"]
+
+[node name="MuseumExterior" type="Sprite2D" parent="."]
+position = Vector2(1215, 299)
+scale = Vector2(0.486742, 0.485714)
+texture = ExtResource("1_ur1rj")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+process_physics_priority = 1
+polygon = PackedVector2Array(17, 640, 2423, 639, 2427, -39, 0, -39, 3, 550, -16, -111, 2503, -69, 2493, 702, -4, 693)
+
+[node name="Inverter" parent="." instance=ExtResource("3_hkfk5")]
+position = Vector2(1620, 410)
+
+[node name="Inverter2" parent="." instance=ExtResource("3_hkfk5")]
+position = Vector2(393, 357)
+
+[node name="Node2D" parent="." instance=ExtResource("4_wwrok")]
+z_index = 1
+position = Vector2(757, 504)
+
+[node name="MuseumItem1" parent="." instance=ExtResource("5_4a2u6")]
+position = Vector2(998, 519)
+
+[node name="MuseumItem2" parent="." instance=ExtResource("5_4a2u6")]
+position = Vector2(548, 524)
+
+[node name="MuseumItem3" parent="." instance=ExtResource("5_4a2u6")]
+position = Vector2(1443, 516)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_nh5n2")]
+position = Vector2(117, 423)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../Camera2D2")
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+limit_left = 5
+limit_top = -42
+limit_right = 2430
+limit_bottom = 635
+editor_draw_limits = true

@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://j3wcm6tulvtr"]
+[gd_scene load_steps=7 format=3 uid="uid://j3wcm6tulvtr"]
 
+[ext_resource type="Texture2D" uid="uid://dluoebhi1f5gr" path="res://dialogue-box.png" id="1_gwvjd"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_ra7t6"]
 [ext_resource type="Texture2D" uid="uid://b4hsjwk5qc5r" path="res://label.png" id="2_1ahr0"]
-[ext_resource type="Texture2D" uid="uid://72mej0l6p0fn" path="res://box.png" id="2_24ubr"]
-[ext_resource type="FontFile" uid="uid://cwyy3cydgi3h1" path="res://PixelOperator-Bold.ttf" id="3_01ao3"]
 [ext_resource type="Texture2D" uid="uid://d2upypqaobrv0" path="res://arrow.png" id="3_5i2ro"]
+[ext_resource type="FontFile" uid="uid://danidhgydo05m" path="res://IBMPlexMono-Medium.ttf" id="3_amo1g"]
 [ext_resource type="FontFile" uid="uid://4aviod1jluif" path="res://joystix monospace.otf" id="4_s138l"]
-[ext_resource type="Texture2D" uid="uid://capjjiooeoyay" path="res://museum_exterior.png" id="7_u22ks"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,11 +24,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ra7t6")
 
-[node name="MuseumExterior" type="Sprite2D" parent="."]
-position = Vector2(-276, 148.5)
-scale = Vector2(0.521495, 0.470357)
-texture = ExtResource("7_u22ks")
-
 [node name="Dialogue" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -40,20 +34,20 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Dialogue"]
 layout_mode = 2
-texture = ExtResource("2_24ubr")
+texture = ExtResource("1_gwvjd")
 expand_mode = 2
 
 [node name="Text" type="Label" parent="Dialogue/TextureRect"]
 layout_mode = 2
 offset_left = 69.0
-offset_top = 71.0
+offset_top = 81.0
 offset_right = 828.0
-offset_bottom = 183.0
+offset_bottom = 186.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_01ao3")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_amo1g")
+theme_override_font_sizes/font_size = 36
 autowrap_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
