@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7jdb5n7qbgk8"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_hlj1l"]
+[ext_resource type="Texture2D" uid="uid://capjjiooeoyay" path="res://museum_exterior.png" id="2_wpq4w"]
+[ext_resource type="FontFile" uid="uid://drevwawqldn2w" path="res://PixelOperator8.ttf" id="3_0tfgb"]
+[ext_resource type="FontFile" uid="uid://4aviod1jluif" path="res://joystix monospace.otf" id="3_m7s34"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hlj1l")
+
+[node name="MuseumExterior" type="Sprite2D" parent="."]
+position = Vector2(-61, 325)
+scale = Vector2(0.521495, 0.470357)
+texture = ExtResource("2_wpq4w")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -259.0
+offset_right = 377.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_0tfgb")
+theme_override_font_sizes/font_size = 32
+text = "CONTROLS
+
+
+
+D - Right
+
+A - Left
+
+S - Hide"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.463
+anchor_top = 0.829
+anchor_right = 0.54
+anchor_bottom = 0.901
+offset_left = -260.376
+offset_top = -0.192036
+offset_right = 257.92
+offset_bottom = 0.151985
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_m7s34")
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
