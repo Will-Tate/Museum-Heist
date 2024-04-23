@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7jdb5n7qbgk8"]
+[gd_scene load_steps=5 format=3 uid="uid://cthbd8lm5t1gm"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_hlj1l"]
 [ext_resource type="Texture2D" uid="uid://capjjiooeoyay" path="res://museum_exterior.png" id="2_wpq4w"]

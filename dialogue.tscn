@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://j3wcm6tulvtr"]
+[gd_scene load_steps=8 format=3 uid="uid://j3wcm6tulvtr"]
 
 [ext_resource type="Texture2D" uid="uid://dluoebhi1f5gr" path="res://dialogue-box.png" id="1_gwvjd"]
 [ext_resource type="Script" path="res://dialogue.gd" id="1_ra7t6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d2upypqaobrv0" path="res://arrow.png" id="3_5i2ro"]
 [ext_resource type="FontFile" uid="uid://danidhgydo05m" path="res://IBMPlexMono-Medium.ttf" id="3_amo1g"]
 [ext_resource type="FontFile" uid="uid://4aviod1jluif" path="res://joystix monospace.otf" id="4_s138l"]
+[ext_resource type="Texture2D" uid="uid://dw8rt4p57stch" path="res://assets/Garuda_Feather.png" id="7_u48u3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -86,6 +87,7 @@ theme_override_font_sizes/font_size = 27
 text = "OPERATOR"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+z_index = 4
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
 anchors_preset = -1
@@ -161,6 +163,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s138l")
 theme_override_font_sizes/font_size = 26
 text = "DECLINE"
+
+[node name="GarudaFeather" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(442, 141.5)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("7_u48u3")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

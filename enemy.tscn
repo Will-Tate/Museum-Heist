@@ -31,7 +31,7 @@ animations = [{
 size = Vector2(73, 249)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djisj"]
-radius = 180.069
+radius = 171.047
 
 [node name="Node2D" type="CharacterBody2D"]
 position = Vector2(39, -10)
@@ -57,7 +57,7 @@ shape = SubResource("CircleShape2D_djisj")
 [node name="Light" type="Sprite2D" parent="Detection"]
 texture_filter = 1
 position = Vector2(-193, -1.62502)
-scale = Vector2(9.8125, 9.14844)
+scale = Vector2(9.59092, 8.10728)
 texture = ExtResource("6_qtdq0")
 flip_h = true
 

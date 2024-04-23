@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var light = $Detection/Light
 
 
-var speed = 100
+var speed = 110
 var player
 var player_in_area = false
 var direction = -1

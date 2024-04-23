@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ow0ddilyt6gy"]
+[gd_scene load_steps=6 format=3 uid="uid://qug8dufq3pvg"]
 
 [ext_resource type="Texture2D" uid="uid://f8lavv8avbr3" path="res://Museum bg _ no lanterns.png" id="1_5brhd"]
+[ext_resource type="Script" path="res://finalmessage.gd" id="1_7cjkf"]
 [ext_resource type="Texture2D" uid="uid://dfq86nsdes2yr" path="res://Letter.png" id="2_3nv03"]
 [ext_resource type="FontFile" uid="uid://cwyy3cydgi3h1" path="res://PixelOperator-Bold.ttf" id="3_j3q8q"]
+[ext_resource type="Texture2D" uid="uid://d2upypqaobrv0" path="res://arrow.png" id="5_kryme"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7cjkf")
 
 [node name="MuseumBgNoLanterns" type="Sprite2D" parent="."]
 z_index = -3
@@ -48,5 +51,19 @@ theme_override_constants/margin_bottom = 80
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_j3q8q")
-text = "It is my belief that the _ Museum has unjustly plundered a sacred artifact that is precious to the Indian peoples’ culture. Your plans to display Garuda’s feather, in this sterile environment free of the rich context from which it belongs, beside other plundered trophies from formerly colonized peoples, does not sit right with me. Therefore, I am confiscating this artifact, and will put it on display within India’s museums."
+theme_override_font_sizes/font_size = 19
+text = "It is my belief that the Aritisg Museum has unjustly plundered a sacred artifact that is precious to the Indian peoples’ culture. Your plans to display Garuda’s feather, in this sterile environment free of the rich context from which it belongs, beside other plundered trophies from formerly colonized peoples, does not sit right with me. Therefore, I am confiscating this artifact, and will put it on display within India’s museums. 
+
+If you wish for it again, acknowledge your wrongdoing and deal with us as equals- participating in cultural exchange between nations and museums. "
 autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 494.0
+offset_right = 926.0
+offset_bottom = 858.0
+scale = Vector2(0.075, 0.075)
+texture_normal = ExtResource("5_kryme")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

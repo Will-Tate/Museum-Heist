@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfd26e2nef8x0"]
 
-[ext_resource type="Script" path="res://scenes/museum_item_1.gd" id="1_cqlqg"]
+[ext_resource type="Script" path="res://scenes/museum_item_5.gd" id="1_m3t18"]
 [ext_resource type="Texture2D" uid="uid://d35fjuay2aq22" path="res://assets/museum item 5.png" id="2_kj7j6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s30l1"]
 size = Vector2(643.383, 966.116)
 
-[node name="MuseumItem1" type="CharacterBody2D"]
+[node name="MuseumItem5" type="CharacterBody2D"]
 position = Vector2(712, 369)
 scale = Vector2(0.331063, 0.34127)
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("1_cqlqg")
+script = ExtResource("1_m3t18")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_kj7j6")
@@ -19,7 +19,7 @@ texture = ExtResource("2_kj7j6")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7.55029, -32.6627)
+position = Vector2(163.111, -46.8837)
 shape = SubResource("RectangleShape2D_s30l1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
