@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt8qvfqvtgh4e"]
+
+[ext_resource type="Texture2D" uid="uid://b70kjm5fw3860" path="res://scene1_moutains.png" id="1_xxlfc"]
+[ext_resource type="PackedScene" uid="uid://dnth0barouoal" path="res://scenes/mainCharacter.tscn" id="2_xws7d"]
+[ext_resource type="PackedScene" uid="uid://c7d7f14shla8r" path="res://scenes/forresttrans.tscn" id="3_o2fqi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Scene1Moutains" type="Sprite2D" parent="."]
+position = Vector2(1266, 397)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_xxlfc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1361, 2, 2521, 5, 2518, 783, -8, 777, -5, 2, 1183, 10, -126, -63, -64, 870, 2657, 862, 2676, -159)
+
+[node name="MainCharBody" parent="." instance=ExtResource("2_xws7d")]
+position = Vector2(43, 565)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="MainCharBody"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="MainCharBody"]
+limit_left = 5
+limit_top = 10
+limit_right = 2505
+limit_bottom = 800
+editor_draw_limits = true
+
+[node name="transitionBox" parent="." instance=ExtResource("3_o2fqi")]
+position = Vector2(2481, 736)

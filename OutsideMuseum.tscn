@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4rf7b8jvfyx4"]
+[gd_scene load_steps=7 format=3 uid="uid://bura73672rtd"]
 
 [ext_resource type="Texture2D" uid="uid://capjjiooeoyay" path="res://museum_exterior.png" id="1_ur1rj"]
 [ext_resource type="PackedScene" uid="uid://dnth0barouoal" path="res://scenes/mainCharacter.tscn" id="2_nh5n2"]
-[ext_resource type="PackedScene" uid="uid://cqk06g20wncde" path="res://inverter.tscn" id="3_hkfk5"]
-[ext_resource type="PackedScene" uid="uid://dwbcvvqtcgynv" path="res://enemy.tscn" id="4_wwrok"]
-[ext_resource type="PackedScene" uid="uid://c48k4wncyjtsm" path="res://scenes/OutsideHide.tscn" id="5_4a2u6"]
-[ext_resource type="PackedScene" uid="uid://bypmqme8kprvf" path="res://scenes/Outsidetrans.tscn" id="6_umy7o"]
+[ext_resource type="PackedScene" path="res://inverter.tscn" id="3_hkfk5"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="4_wwrok"]
+[ext_resource type="PackedScene" path="res://scenes/OutsideHide.tscn" id="5_4a2u6"]
+[ext_resource type="PackedScene" path="res://scenes/Outsidetrans.tscn" id="6_umy7o"]
 
 [node name="OutsideMuseumMain" type="Node2D"]
 
